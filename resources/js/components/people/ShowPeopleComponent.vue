@@ -43,7 +43,7 @@
                 axios.get(this.$route.params.url)
                     .then(res => {
                         this.people = res.data;
-                        
+
                     })
                     .catch(error => {
                         console.log(error);

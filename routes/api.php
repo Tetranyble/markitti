@@ -17,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/planets', [PeopleController::class, 'index']);
+//Route::get('/planets', [PeopleController::class, 'index']);
+
+Route::post('/tokens/create', function (Request $request) {
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::attempt($credentials)) {
+        $user = \App\Models\User::whereEmail($request->email)->first();
+        $token = $user->createToken($request->token_name);
+
+        return ['token' => $token->plainTextToken];
+    }
+});
