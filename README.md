@@ -1,6 +1,10 @@
 ## About Markitti
-Markitti is a software as a service for business owners who wish to own a web storefront without hiring a developer rather in three clicks and hooks
-and hookup there domain like a breeze
+Markitti is a software as a service for business owners who wish to own a web storefront without hiring 
+a developer rather in three clicks
+and hooking up there domain to the central application server there own created tenant store rendered in there domain name or sub-domain.
+For example:
+
+`www.shoes.com` or `www.shoes.markitti.com` renders shoes store web front with same content and scoped to the tenant.
 
 ## Extension to Interview task
 You are receiving this email because you applied for a full-stack (vue-laravel) position at raadaaa partners int.
