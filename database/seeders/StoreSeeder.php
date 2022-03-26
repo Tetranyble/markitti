@@ -18,7 +18,7 @@ class StoreSeeder extends Seeder
             'name' => 'super store',
             'description' => 'The quick brown fox store that sales nothing apparently.',
         ])->domains()->create([
-        'domain' => 'super.localhost',
+        'domain' => 'store.localhost',
         ]);
     }
 }

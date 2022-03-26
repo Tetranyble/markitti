@@ -15,7 +15,7 @@ Route::middleware([
 
 ])->group(function () {
     Route::get('/', function (Stores $stores) {
-        dd($stores);
+
         return 'This is your multi-tenant application. The id of the current tenant is ';
     });
 });

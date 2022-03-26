@@ -15,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('/product', ProductController::class);
-Route::get('/', function (){
-    return 'main site loaded';
+Route::get('/', function () {
+    return view('welcome');
 });
-
-

@@ -47,7 +47,7 @@ class StoreServiceProvider extends ServiceProvider
     {
         $tenancyMiddleware = [
             // Even higher priority than the initialization middleware
-            Middleware\PreventAccessFromCentralDomains::class,
+            PreventAccessFromCentralDomains::class,
             InitializeStoreByDomain::class,
             InitializeStoreBySubdomain::class,
             InitializeStoreByDomainOrSubdomain::class,
