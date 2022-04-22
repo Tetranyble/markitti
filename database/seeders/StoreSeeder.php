@@ -15,10 +15,10 @@ class StoreSeeder extends Seeder
     public function run()
     {
         Store::create([
-            'name' => 'super store',
+            'name' => 'Our test store',
             'description' => 'The quick brown fox store that sales nothing apparently.',
         ])->domains()->create([
-        'domain' => 'store.localhost',
+        'domain' => 'store.markitti.com',
         ]);
     }
 }
