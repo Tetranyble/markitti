@@ -18,7 +18,7 @@ class StoreSeeder extends Seeder
             'name' => 'Our test store',
             'description' => 'The quick brown fox store that sales nothing apparently.',
         ])->domains()->create([
-        'domain' => 'store',
+        'domain' => 'store.markitti.com',
         ]);
     }
 }
