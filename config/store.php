@@ -1,6 +1,8 @@
 <?php
 
-if(app()->environment('production')){
+use Illuminate\Support\Facades\App;
+
+if(App::environment('production')){
     $domain = ['www.markitti.com', 'markitti.com'];
 }else{
     $domain = ['127.0.0.1', 'localhost', 'localhost:8000'];
