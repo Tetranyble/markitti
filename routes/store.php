@@ -4,6 +4,7 @@
  * Store tenant routes
  */
 
+use App\Http\Controllers\ProductController;
 use App\Http\Middleware\InitializeStoreByDomainOrSubdomain;
 use App\Http\Middleware\PreventAccessFromStoreDomain;
 use App\Services\Stores;
