@@ -193,7 +193,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'Str' => Illuminate\Support\Str::class,
     ])->toArray(),
 
 ];
