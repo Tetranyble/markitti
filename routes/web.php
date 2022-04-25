@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/product', ProductController::class);
 Route::get('/', function () {
     return view('components.home');
+});
+Route::get('/block', function (Request $request){
+    $configurations = \App\Models\ServerBlock::whereStatus(true)->first();
+    dd($configurations);
+    $configuration = \Nginx\Conf::CreateFromString($configurations->block)->GetAsString();
+    dd($configuration);
+    return (new App\Actions\CreateServerBlock)->execute();
 });
