@@ -17,8 +17,7 @@ class CreateStoresTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
-            $table->string('server')->nullable();
-//            $table->json('data')->nullable();
+            $table->string('server')->unique();
             $table->timestamps();
         });
     }

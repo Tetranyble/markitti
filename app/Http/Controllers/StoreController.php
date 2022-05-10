@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ConfirmServerConfiguration;
+use App\Jobs\GenerateServerBlock;
+use App\Jobs\ReloadServerConfiguration;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Str;
 
 class StoreController extends Controller
 {
@@ -14,7 +19,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        return Store::first()->server;
+            //->map(fn($domain) => [$domain,"www.".$domain])->flatten(1);
     }
 
     /**
@@ -35,7 +41,18 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = Store::create([
+            'name' => 'new store',
+            'server' => Str::slug('new store'),
+            'description' => 'The quick brown fox store that sales nothing apparently.',
+        ])->domains()->create([
+            'domain' => 'imperial',
+        ]);
+        Bus::chain([
+            new GenerateServerBlock($store),
+            new ConfirmServerConfiguration(),
+            new ReloadServerConfiguration()
+        ])->dispatch();
     }
 
     /**

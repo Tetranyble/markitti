@@ -17,9 +17,8 @@ class CreateDomainsTable extends Migration
             $table->id();
             $table->string('domain');
             $table->unsignedBigInteger('store_id');
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

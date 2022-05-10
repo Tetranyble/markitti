@@ -8,10 +8,11 @@
         "php": "^8.0.2",
         "apache_nginx_conf/nginx_conf": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "joltmode/nfigurator": "^0.2.5",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
-        "madkom/nginx-configurator": "^1.0@RC"
+        "tetranybles/server-configuration": "^0.1.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

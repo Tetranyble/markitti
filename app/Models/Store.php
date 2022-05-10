@@ -11,6 +11,6 @@ class Store extends Model
     protected $fillable = ['name', 'description'];
 
     public function domains(){
-        return $this->hasMany(Domain::class);
+        return $this->hasMany(Domain::class)->orderBy('id', 'asc');
     }
 }
