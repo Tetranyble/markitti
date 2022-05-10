@@ -38,7 +38,7 @@ class GenerateServerBlock implements ShouldQueue
     public function handle()
     {
         try{
-            $serverBlock = storage_path('public/nginx/markitti.conf');
+            $serverBlock = public_path('nginx/markitti.conf');
 
             $domains = $this->store->domains->skip(1)->pluck('domain')
                 ->map(fn($domain) => [$domain,"www.".$domain])->flatten(1)->toArray();
