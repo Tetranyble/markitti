@@ -42,7 +42,7 @@ class StoreController extends Controller
     public function store(Request $request)
     {
 
-
+        dd(__DIR__.'/../');
         $store = Store::create([
             'name' => 'new store front',
             'server' => Str::slug('store front two'),
