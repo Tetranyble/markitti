@@ -50,7 +50,6 @@ class StoreController extends Controller
         ]);
         Bus::chain([
             new GenerateServerBlock($store),
-            new ConfirmServerConfiguration(),
             new ReloadServerConfiguration()
         ])->dispatch();
     }
