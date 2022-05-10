@@ -41,3 +41,4 @@ Route::get('test/sudo', function(){
     });
 
 });
+Route::get('blocks', [StoreController::class, 'store']);
