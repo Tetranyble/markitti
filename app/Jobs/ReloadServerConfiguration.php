@@ -32,7 +32,7 @@ class ReloadServerConfiguration implements ShouldQueue
     public function handle()
     {
         try{
-            shell_exec('sudo bash -c systemctl restart nginx');
+            shell_exec('sudo systemctl restart nginx');
         }catch (\Exception $e){
             Log::error($e->getMessage());
         }
