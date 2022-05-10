@@ -41,12 +41,17 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
+
         $store = Store::create([
-            'name' => 'new store',
-            'server' => Str::slug('new store'),
+            'name' => 'new store front',
+            'server' => Str::slug('store front two'),
             'description' => 'The quick brown fox store that sales nothing apparently.',
-        ])->domains()->create([
-            'domain' => 'imperial',
+        ]);
+        $store->domains()->create([
+            'domain' => 'syndicate',
+        ]);
+        $store->domains()->create([
+            'domain' => 'syndicate.com',
         ]);
         Bus::chain([
             new GenerateServerBlock($store),

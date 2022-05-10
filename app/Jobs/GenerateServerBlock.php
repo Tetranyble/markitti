@@ -41,8 +41,8 @@ class GenerateServerBlock implements ShouldQueue
             $serverBlock = storage_path('app/nginx/markitti.conf');
 
             $domains = $this->store->domains->skip(1)->pluck('domain')
-                ->map(fn($domain) => [$domain,"www.".$domain])->flatten(1);
-
+                ->map(fn($domain) => [$domain,"www.".$domain])->flatten(1)->toArray();
+//            $domain = is_array($domains) ? $domains : (array) $domains;
             NginxConfiguration::load($serverBlock)
                 ->setDirective(['markitti.com', 'www.markitti.com'], $domains)
                 ->save("/var/nginx/sites-available/{$this->store->server}");

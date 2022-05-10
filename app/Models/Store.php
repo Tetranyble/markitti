@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'server'];
 
     public function domains(){
         return $this->hasMany(Domain::class)->orderBy('id', 'asc');

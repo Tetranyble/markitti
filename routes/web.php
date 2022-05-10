@@ -25,12 +25,12 @@ Route::get('/', function () {
 });
 Route::get('/block', function (Request $request){
     $configurations = \App\Models\ServerBlock::whereStatus(true)->first();
-    dd($configurations);
-    $configuration = \Nginx\Conf::CreateFromString($configurations->block)->GetAsString();
-    dd($configuration);
-    return (new pp\Actions\CreateServerBlock)->execute();
-});
 
+    $configuration = \Nginx\Conf::CreateFromString($configurations->block)->GetAsString();
+
+    return (new App\Actions\CreateServerBlock)->execute();
+});
+Route::get('server/test', [StoreController::class, 'store']);
 Route::resource('server', StoreController::class);
 Route::get('test/sudo', function(){
 //    return (memory_get_usage(true) / 1024 / 1024);
