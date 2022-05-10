@@ -42,6 +42,7 @@ class StoreController extends Controller
     public function store(Request $request)
     {
 
+
         $store = Store::create([
             'name' => 'new store front',
             'server' => Str::slug('store front two'),
