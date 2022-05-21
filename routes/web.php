@@ -2,7 +2,12 @@
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StoreController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Nfigurator\Directive;
+use Nfigurator\Scope;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +23,22 @@ Route::resource('/product', ProductController::class);
 Route::get('/', function () {
     return view('components.home');
 });
+Route::get('/block', function (Request $request){
+    $configurations = \App\Models\ServerBlock::whereStatus(true)->first();
+
+    $configuration = \Nginx\Conf::CreateFromString($configurations->block)->GetAsString();
+
+    return (new App\Actions\CreateServerBlock)->execute();
+});
+Route::get('server/test', [StoreController::class, 'store']);
+Route::resource('server', StoreController::class);
+Route::get('test/sudo', function(){
+//    return (memory_get_usage(true) / 1024 / 1024);
+
+    $command = "bash -c php artisan make:job Imperial";
+    \Symfony\Component\Process\Process::fromShellCommandline($command)->run(function ($type, $data){
+        \Illuminate\Support\Facades\Log::error($data);
+    });
+
+});
+Route::get('blocks', [StoreController::class, 'store']);

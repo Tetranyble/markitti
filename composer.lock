@@ -4944,6 +4944,49 @@
             "time": "2022-03-02T12:58:14+00:00"
         },
         {
+            "name": "tetranybles/server-configuration",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Tetranybles/server-configuration.git",
+                "reference": "d14b31120a832d0f61f94f1f2333497413f501d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Tetranybles/server-configuration/zipball/d14b31120a832d0f61f94f1f2333497413f501d5",
+                "reference": "d14b31120a832d0f61f94f1f2333497413f501d5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.5.20"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tetranybles\\ServerConfiguration\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Leonard Ugbanawaji Ekenekiso",
+                    "email": "senenerst@gmail.com"
+                }
+            ],
+            "description": "a server block management",
+            "support": {
+                "issues": "https://github.com/Tetranybles/server-configuration/issues",
+                "source": "https://github.com/Tetranybles/server-configuration/tree/v0.1.1"
+            },
+            "time": "2022-05-07T14:11:48+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.4",
             "source": {
