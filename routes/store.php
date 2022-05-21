@@ -7,6 +7,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Middleware\InitializeStoreByDomainOrSubdomain;
 use App\Http\Middleware\PreventAccessFromStoreDomain;
+use App\Models\Store;
 use App\Services\Stores;
 
 Route::middleware([
@@ -19,5 +20,8 @@ Route::middleware([
     Route::get('/', function (Stores $stores) {
 
         return 'This is your multi-tenant application. The id of the current tenant is ';
+    });
+    Route::get('/pensuh/test', function(Store $school){
+        return $school;
     });
 });
