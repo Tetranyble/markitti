@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Store;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -17,12 +18,25 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $resource = $this->faker->randomElement([
+            'https://harde.s3.us-east-2.amazonaws.com/cem.png',
+            'https://harde.s3.us-east-2.amazonaws.com/MBA-Illo-2-1.jpg',
+            'https://harde.s3.us-east-2.amazonaws.com/uiux.png',
+            'https://harde.s3.us-east-2.amazonaws.com/personal-effectiveness.png',
+        ]);
+
         return [
-            'name' => $this->faker->name(),
+            'firstname' => $this->faker->firstName,
+            'lastname' => $this->faker->lastName,
+            'middlename' => $this->faker->firstName,
             'email' => $this->faker->unique()->safeEmail(),
+            'photo' => $resource,
+            'phone' => $this->faker->phoneNumber,
+            'code' => time(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => 'password', // password
             'remember_token' => Str::random(10),
+            //'store_id' => Store::factory()->create()->id
         ];
     }
 

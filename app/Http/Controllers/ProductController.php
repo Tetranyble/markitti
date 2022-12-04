@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Store;
 use App\Services\StoreManager;
+use App\Services\Stores;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    protected $storeManager;
-    public function __construct(StoreManager $store)
+
+    public function __construct()
     {
-        $this->storeManager = $store;
     }
 
     /**
@@ -19,11 +20,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Stores $store)
     {
 
-        $products = Product::all();
-        return view('product.index', compact('products'));
+        return view('stores.classic.products');
     }
 
     /**
@@ -53,9 +53,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($product)
     {
-        return json_encode($product);
+        return view('stores.classic.product');
     }
 
     /**

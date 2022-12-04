@@ -25,4 +25,6 @@ class Stores {
     public static function stores(){
         return app(Stores::class)->store();
     }
+
+
 }

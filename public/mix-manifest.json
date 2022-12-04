@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/assets/js/dashboard.js": "/assets/js/dashboard.js",
+    "/assets/css/portal.css": "/assets/css/portal.css",
+    "/assets/images/app-logo.svg": "/assets/images/app-logo.svg",
+    "/assets/images/doc-thumb-1.jpg": "/assets/images/doc-thumb-1.jpg",
+    "/assets/images/doc-thumb-2.jpg": "/assets/images/doc-thumb-2.jpg",
+    "/assets/images/portal-logo.svg": "/assets/images/portal-logo.svg",
+    "/assets/images/user.png": "/assets/images/user.png",
+    "/assets/plugins/chart.js": "/assets/plugins/chart.js",
+    "/assets/plugins/popper.min.js": "/assets/plugins/popper.min.js"
 }
